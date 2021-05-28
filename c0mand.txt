@@ -1,0 +1,13 @@
+#after cofiguration build the docker file
+docker build .
+
+#create the docker composer and build the composer 
+docker-compose build  
+
+#run the application with the composer and app in local directory 
+docker-compose run app sh -c "django-admin.py startproject app ."   
+
+
+
+# run the unit test 
+docker-compose run app sh -c "python manage.py test"

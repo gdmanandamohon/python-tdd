@@ -8,6 +8,12 @@ docker-compose build
 docker-compose run app sh -c "django-admin.py startproject app ."   
 
 
-
 # run the unit test 
 docker-compose run app sh -c "python manage.py test"
+
+#run the application with the composer and app in local directory 
+docker-compose run app sh -c "python manage.py startapp core"   
+
+
+#Make Migration 
+docker-compose run app sh -c "python manage.py makemigrations core"
